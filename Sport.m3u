@@ -1,15 +1,5 @@
 #EXTM3U x-tvg-url="https://epg.yang-1989.eu.org/epg.xml.gz"
 
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",免費訂閲：請勿販賣...
-https://epg.yang-1989.eu.org/v/302.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",維護時間：2026-3-1 #佛系維護...
-https://epg.yang-1989.eu.org/v/301.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",維護内容：維護 Sport「調整限制 / 維護資源」
-https://epg.yang-1989.eu.org/v/302.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",公告说明：推流源·「隨時拉閘」
-https://epg.yang-1989.eu.org/v/301.mp4
-#EXTINF:-1 tvg-id="免费订阅" tvg-name="免费订阅" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",建議使用：請保持 个人觀看 請勿頻繁切換
-https://epg.yang-1989.eu.org/v/301.mp4
 
 #EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV5.png" group-title="•體育「Relay」",CCTV 5 體育
 https://cdn-2.ttvb.eu.org/api/CCTV5/index.m3u8

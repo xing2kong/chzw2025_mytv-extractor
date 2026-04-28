@@ -1,6 +1,7 @@
 #EXTM3U
 
 url-tvg="https://epg.yang-1989.eu.org/epg.xml.gz"
+#EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="https://epg.yang-1989.eu.org/logo/翡翠台.png" group-title="•熱門節目",翡翠台
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=0958b9c657622c465a6205eb2252b8ed:2d2fd7b1661b1e28de38268872b48480
@@ -445,16 +446,6 @@ https://cdn-2.ttvb.eu.org/myTV/NOWR/index.mpd
 https://cdn-2.ttvb.eu.org/myTV/CONC/index.mpd
 
 x-tvg-url="https://epg.yang-1989.eu.org/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",免費訂閲：請勿販賣...
-https://epg.yang-1989.eu.org/v/302.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",維護時間：2026-3-1 #佛系維護...
-https://epg.yang-1989.eu.org/v/301.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",維護内容：維護 Gather「調整限制 / 維護資源」
-https://epg.yang-1989.eu.org/v/302.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",公告说明：推流源·「隨時拉閘 / 晚安"0-6"」
-https://epg.yang-1989.eu.org/v/301.mp4
-#EXTINF:-1 tvg-id="免费订阅" tvg-name="免费订阅" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",建議使用：請保持 个人觀看 請勿頻繁切換
-https://epg.yang-1989.eu.org/v/301.mp4
 
 #EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV1.png" group-title="•央視「Relay」",CCTV 1 綜合「Relay」
 https://cdn-2.ttvb.eu.org/api/CCTV1/index.m3u8
@@ -3070,25 +3061,8 @@ https://piccpndali.v.myalicdn.com/audio/cetv3_2.m3u8
 #EXTINF:-1 tvg-id="CETV4" tvg-name="CETV4" tvg-logo="https://epg.yang-1989.eu.org/logo/CETV4.png" group-title="•广播「贰」",「电视伴音」CETV4
 https://piccpndali.v.myalicdn.com/audio/cetv4_2.m3u8
 
-#EXTINF:-1 tvg-id="MPD" tvg-name="MPD" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="--------------------------",---------------
-https://epg.yang-1989.eu.org/v/302.mp4
-#EXTINF:-1 tvg-id="MPD" tvg-name="MPD" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•myTV「请到GitHub获取」",仅支持安卓·不懂问 Ai
-https://epg.yang-1989.eu.org/v/301.mp4
-#EXTINF:-1 tvg-id="MPD" tvg-name="MPD" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="---------------------------",https://github.com/YanG-1989
-https://epg.yang-1989.eu.org/v/302.mp4
-
 x-tvg-url="https://epg.yang-1989.eu.org/epg.xml.gz"
 
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",免費訂閲：請勿販賣...
-https://epg.yang-1989.eu.org/v/302.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",維護時間：2026-3-1 #佛系維護...
-https://epg.yang-1989.eu.org/v/301.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",維護内容：維護 Sport「調整限制 / 維護資源」
-https://epg.yang-1989.eu.org/v/302.mp4
-#EXTINF:-1 tvg-id="免費訂閲" tvg-name="免費訂閲" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",公告说明：推流源·「隨時拉閘」
-https://epg.yang-1989.eu.org/v/301.mp4
-#EXTINF:-1 tvg-id="免费订阅" tvg-name="免费订阅" tvg-logo="https://epg.yang-1989.eu.org/logo/温馨提示.png" group-title="•溫馨「提示」",建議使用：請保持 个人觀看 請勿頻繁切換
-https://epg.yang-1989.eu.org/v/301.mp4
 
 #EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://epg.yang-1989.eu.org/logo/CCTV5.png" group-title="•體育「Relay」",CCTV 5 體育
 https://cdn-2.ttvb.eu.org/api/CCTV5/index.m3u8
