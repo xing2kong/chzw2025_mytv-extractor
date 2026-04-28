@@ -48,7 +48,7 @@ jobs:
               "Range": "bytes=0-",
               "Connection": "close",
               "Icy-MetaData": "1",
-              "Host": "tv.iill.top"
+              "Host": "iptv.yang-1989.eu.org"
           }
 
           print("📡 正在抓取 MyTV...")
