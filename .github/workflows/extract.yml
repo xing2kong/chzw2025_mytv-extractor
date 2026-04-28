@@ -2,8 +2,8 @@ name: Extract MyTV (Android Box Player)
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "2 */2 * * *"
+  #schedule:
+    #- cron: "2 */2 * * *"
 
 jobs:
   fetch-mytv:
