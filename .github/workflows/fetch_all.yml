@@ -27,11 +27,13 @@ jobs:
           python3 - <<'EOF'
           import cloudscraper
 
+          # -----------------------------
+          # 1️⃣ 公用抓取函数
+          # -----------------------------
           def fetch(url):
               scraper = cloudscraper.create_scraper(
                   browser={'browser': 'chrome', 'platform': 'android', 'mobile': True}
               )
-              # 已修正 Headers 逻辑
               headers = {
                   "User-Agent": "AppleCoreMedia/1.0.0.7B367 (iPad; U; CPU OS 4_3_3 like Mac OS X)",
                   "Accept": "*/*",
@@ -46,41 +48,64 @@ jobs:
                   print(f"❌ Error fetching {url}: {e}")
               return None
 
-          # 1️⃣ MyTV (抓取并清洗)
+          # -----------------------------
+          # 2️⃣ 核心清洗函数 (统一过滤逻辑)
+          # -----------------------------
+          def clean_m3u(raw_text):
+              if not raw_text:
+                  return ""
+              lines = raw_text.splitlines()
+              filtered = []
+              skip_next = False
+              
+              for line in lines:
+                  # 过滤包含无效关键词的行
+                  if any(x in line for x in ["302.mp4", "301.mp4", "温馨提示.png"]):
+                      continue
+                      
+                  # 过滤“免费订阅”及其对应的下一行 URL
+                  if 'tvg-id="免費訂閲"' in line:
+                      skip_next = True
+                      continue
+                  if skip_next:
+                      skip_next = False
+                      continue
+                      
+                  filtered.append(line)
+              return "\n".join(filtered)
+
+          # -----------------------------
+          # 3️⃣ 执行抓取与清洗
+          # -----------------------------
+          
+          # 处理 MyTV
           mytv_raw = fetch("https://iptv.yang-1989.eu.org/m3u/myTV.m3u")
           if mytv_raw:
-              lines = mytv_raw.splitlines()
-              filtered = []
-              skip = False
-              for line in lines:
-                  if "302.mp4" in line or "301.mp4" in line: continue
-                  if 'tvg-id="免費訂閲"' in line:
-                      skip = True
-                      continue
-                  if skip:
-                      skip = False
-                      continue
-                  filtered.append(line)
+              mytv_clean = clean_m3u(mytv_raw)
               with open("MyTV.m3u", "w", encoding="utf-8") as f:
-                  f.write("\n".join(filtered))
-              print("✔ MyTV.m3u saved")
+                  f.write(mytv_clean)
+              print("✔ MyTV.m3u cleaned and saved")
 
-          # 2️⃣ Gather
-          gather = fetch("https://iptv.yang-1989.eu.org/m3u/Gather.m3u")
-          if gather:
+          # 处理 Gather
+          gather_raw = fetch("https://iptv.yang-1989.eu.org/m3u/Gather.m3u")
+          if gather_raw:
+              gather_clean = clean_m3u(gather_raw)
               with open("Gather.m3u", "w", encoding="utf-8") as f:
-                  f.write(gather)
-              print("✔ Gather.m3u saved")
+                  f.write(gather_clean)
+              print("✔ Gather.m3u cleaned and saved")
 
-          # 3️⃣ Sport
-          sport = fetch("https://iptv.yang-1989.eu.org/m3u/Sport.m3u")
-          if sport:
+          # 处理 Sport
+          sport_raw = fetch("https://iptv.yang-1989.eu.org/m3u/Sport.m3u")
+          if sport_raw:
+              sport_clean = clean_m3u(sport_raw)
               with open("Sport.m3u", "w", encoding="utf-8") as f:
-                  f.write(sport)
-              print("✔ Sport.m3u saved")
+                  f.write(sport_clean)
+              print("✔ Sport.m3u cleaned and saved")
 
-          # 4️⃣ 合并生成 yang.m3u (规范化合并)
-          print("\n🔗 Merging into yang.m3u ...")
+          # -----------------------------
+          # 4️⃣ 规范化合并生成 yang.m3u
+          # -----------------------------
+          print("\n🔗 Merging all cleaned files into yang.m3u ...")
           with open("yang.m3u", "w", encoding="utf-8") as out:
               out.write("#EXTM3U\n")
               for name in ["MyTV.m3u", "Gather.m3u", "Sport.m3u"]:
@@ -88,12 +113,13 @@ jobs:
                       with open(name, "r", encoding="utf-8") as f:
                           content = f.read().strip()
                           if content.startswith("#EXTM3U"):
+                              # 移除重复的头部标签
                               content = content.replace("#EXTM3U", "", 1).strip()
                           if content:
                               out.write("\n" + content + "\n")
                   except:
                       print(f"⚠ {name} 不存在，跳过")
-          print("🎉 Done: yang.m3u generated")
+          print("🎉 All tasks completed!")
           EOF
 
       - name: Commit and push changes
@@ -103,5 +129,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add MyTV.m3u Gather.m3u Sport.m3u yang.m3u || true
-          git commit -m "Update All M3U (yang.m3u)" || echo "No changes to commit"
+          git commit -m "Update All M3U (Filtered & Merged)" || echo "No changes to commit"
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
