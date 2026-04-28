@@ -54,7 +54,7 @@ jobs:
           # -----------------------------
           # 1️⃣ MyTV（含清理）
           # -----------------------------
-          mytv = fetch("https://tv.iill.top/m3u/MyTV")
+          mytv = fetch("https://iptv.yang-1989.eu.org/m3u/MyTV")
           if mytv:
               lines = mytv.splitlines()
               filtered = []
@@ -77,7 +77,7 @@ jobs:
           # -----------------------------
           # 2️⃣ Gather
           # -----------------------------
-          gather = fetch("https://tv.iill.top/m3u/Gather")
+          gather = fetch("https://iptv.yang-1989.eu.org/m3u/Gather.m3u")
           if gather:
               with open("Gather.m3u", "w", encoding="utf-8") as f:
                   f.write(gather)
@@ -85,7 +85,7 @@ jobs:
           # -----------------------------
           # 3️⃣ Sport
           # -----------------------------
-          sport = fetch("https://tv.iill.top/m3u/Sport")
+          sport = fetch("https://iptv.yang-1989.eu.org/m3u/Sport")
           if sport:
               with open("Sport.m3u", "w", encoding="utf-8") as f:
                   f.write(sport)
