@@ -518,6 +518,14 @@ https://cdn.19891230.eu.org/hk-1/881/index.m3u8
 https://cdn.19891230.eu.org/hk-1/903/index.m3u8
 #EXTINF:-1 tvg-id="商業電台 AM864" tvg-name="商業電台 AM864" tvg-logo="https://epg.yang-1989.eu.org/logo/AM864.png" group-title="•港澳「限制」",AM864「电台」
 https://cdn.19891230.eu.org/hk-1/864/index.m3u8
+
+#EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="https://epg.yang-1989.eu.org/logo/翡翠台.png" group-title="•港澳「限制」",翡翠台
+https://test.19891230.eu.org/hk/J/index.m3u8
+#EXTINF:-1 tvg-id="無綫新聞台" tvg-name="無綫新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/無綫新聞台.png" group-title="•港澳「限制」",無綫新聞台
+https://test.19891230.eu.org/hk/C/index.m3u8
+#EXTINF:-1 tvg-id="TVB Plus" tvg-name="TVB Plus" tvg-logo="https://epg.yang-1989.eu.org/logo/TVBPlus.png" group-title="•港澳「限制」",TVB Plus
+https://test.19891230.eu.org/hk/TVB-Plus/index.m3u8
+
 #EXTINF:-1 tvg-id="Now直播台" tvg-name="Now直播台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now直播台.png" group-title="•港澳「限制」",Now直播台
 https://cdn.19891230.eu.org/hk/now-331/index.m3u8
 #EXTINF:-1 tvg-id="Now新聞台" tvg-name="Now新聞台" tvg-logo="https://epg.yang-1989.eu.org/logo/Now新聞台.png" group-title="•港澳「限制」",Now新聞台
